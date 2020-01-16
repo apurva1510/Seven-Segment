@@ -1,0 +1,19 @@
+LIBRARY ieee;
+USE ieee.std_logic_1164.all;
+USE ieee.std_logic_unsigned.all;
+
+ENTITY C IS
+PORT (
+			K					:IN	STD_LOGIC_VECTOR(3 DOWNTO 0);
+			L					:OUT  STD_LOGIC_VECTOR(3 DOWNTO 0));
+			
+end C;
+
+ARCHITECTURE Behavior OF C IS
+
+BEGIN 
+L(0) <= ( K(5) and  K(7) and  K(9));
+L(1) <= ( K(6) and  K(7));
+L(2) <= ( K(5) and  K(7) and  K(6));
+L(3) <= ( K(8) and  K(9) );
+END Behavior; 

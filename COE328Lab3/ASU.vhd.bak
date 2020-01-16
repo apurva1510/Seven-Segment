@@ -1,0 +1,19 @@
+LIBRARY ieee;
+USE ieee.stdlogic_1164.all;
+USE ieee.sdlic_unsigned.all;
+
+ENITY ade1 IS
+	PORT( Cin					:IN	STD_LOGIC;
+			X,Y					:IN	STD_LOGIC_VECTOR(3 DOWNTO 0);
+			S						:OUT  STD_LOGIC_VECTOR(3 DOWNTO 0);
+			Count,Overflow 	:OUT 	STD_LOGIC);
+END adder16;
+
+ARCHITECTURE Behavior OF ader16 IS
+		SIGNAL Sum: STD_LOGIC_VECTOR(3 DOWNTO 0);
+BEGIN
+		Sum <=('0' & X) + ('0' & Y) + Cin;
+		S<= Sum(3 DOWNTO 0 );
+		Cout <= Sum(3);
+		overflow <= Sum(3) XOR X(3) XOR Y(3) XOR Sum(3);
+END Behavior;
